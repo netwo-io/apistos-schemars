@@ -219,6 +219,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "ipnetwork"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bf466541e9d546596ee94f9f69590f89473455f88372423e0008fc1a7daf100e"
+dependencies = [
+ "serde",
+]
+
+[[package]]
 name = "itoa"
 version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -331,6 +340,7 @@ dependencies = [
  "enumset",
  "indexmap 1.9.3",
  "indexmap 2.0.2",
+ "ipnetwork",
  "pretty_assertions",
  "rust_decimal",
  "schemars_derive",
