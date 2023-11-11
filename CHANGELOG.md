@@ -1,5 +1,6 @@
 # Changelog
 
+<<<<<<< HEAD
 ## [0.8.22] - 2025-02-25
 
 ### Fixed:
@@ -101,6 +102,8 @@
 
 - Update to syn 2.0, which should improve compile times in many cases (https://github.com/GREsau/schemars/pull/281)
 
+=======
+>>>>>>> c106060 (v0.8.16)
 ## [0.8.16] - 2023-11-11
 
 ### Fixed:
