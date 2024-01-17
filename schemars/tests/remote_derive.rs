@@ -1,5 +1,6 @@
 mod util;
 
+extern crate apistos_schemars as schemars;
 use other_crate::Duration;
 use schemars::JsonSchema;
 use serde::Serialize;

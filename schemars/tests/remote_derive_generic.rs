@@ -1,5 +1,6 @@
 mod util;
 
+extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use serde::Serialize;
 use std::collections::{HashMap, HashSet};

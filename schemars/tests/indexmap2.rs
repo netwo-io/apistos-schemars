@@ -1,4 +1,5 @@
 mod util;
+extern crate apistos_schemars as schemars;
 use indexmap2::{IndexMap, IndexSet};
 use schemars::JsonSchema;
 use util::*;

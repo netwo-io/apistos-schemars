@@ -64,6 +64,7 @@ use schema::Schema;
 /// # Examples
 /// Deriving an implementation:
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{schema_for, JsonSchema};
 ///
 /// #[derive(JsonSchema)]
@@ -78,6 +79,7 @@ use schema::Schema;
 /// you will need to determine an appropriate name and ID for the type.
 /// For non-generic types, the type name/path are suitable for this:
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{r#gen::SchemaGenerator, schema::Schema, JsonSchema};
 /// use std::borrow::Cow;
 ///
@@ -104,6 +106,7 @@ use schema::Schema;
 ///
 /// But generic type parameters which may affect the generated schema should typically be included in the name/ID:
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{r#gen::SchemaGenerator, schema::Schema, JsonSchema};
 /// use std::{borrow::Cow, marker::PhantomData};
 ///
@@ -167,7 +170,9 @@ pub trait JsonSchema {
 
     // TODO document and bring into public API?
     #[doc(hidden)]
-    fn _schemars_private_non_optional_json_schema(generator: &mut r#gen::SchemaGenerator) -> Schema {
+    fn _schemars_private_non_optional_json_schema(
+        generator: &mut r#gen::SchemaGenerator,
+    ) -> Schema {
         Self::json_schema(generator)
     }
 
