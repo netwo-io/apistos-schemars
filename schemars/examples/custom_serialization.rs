@@ -1,3 +1,4 @@
+extern crate apistos_schemars as schemars;
 use schemars::schema::{Schema, SchemaObject};
 use schemars::{gen::SchemaGenerator, schema_for, JsonSchema};
 use serde::{Deserialize, Serialize};

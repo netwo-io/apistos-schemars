@@ -1,3 +1,4 @@
+extern crate apistos_schemars as schemars;
 use schemars::{schema_for, JsonSchema_repr};
 
 #[derive(JsonSchema_repr)]
