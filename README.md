@@ -1,16 +1,16 @@
-# Schemars
+# Apistos Schemars
 
-[![CI Build](https://img.shields.io/github/actions/workflow/status/GREsau/schemars/ci.yml?branch=master&logo=GitHub)](https://github.com/GREsau/schemars/actions)
-[![Crates.io](https://img.shields.io/crates/v/schemars)](https://crates.io/crates/schemars)
-[![Docs](https://docs.rs/schemars/badge.svg)](https://docs.rs/schemars)
-[![MSRV 1.60+](https://img.shields.io/badge/schemars-rustc_1.60+-lightgray.svg)](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html)
+[![CI Build](https://img.shields.io/github/actions/workflow/status/netwo-io/apistos-schemars/ci.yml?branch=master&logo=GitHub)](https://github.com/netwo-io/apistos-schemars/actions)
+[![Crates.io](https://img.shields.io/crates/v/apistos-schemars)](https://crates.io/crates/apistos-schemars)
+[![Docs](https://docs.rs/apistos-schemars/badge.svg)](https://docs.rs/apistos-schemars)
+[![MSRV 1.60+](https://img.shields.io/badge/apistos-schemars-rustc_1.60+-lightgray.svg)](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html)
 
 Generate JSON Schema documents from Rust code
 
 > ⚠️ Warning
 > 
 > This is a fork of the official [schemars repository](https://github.com/GREsau/schemars) which only exists until [this PR](https://github.com/GREsau/schemars/pull/250) is merged. 
-> It is published on crates.io with the name [apistos_schemars](https://crates.io/crates/apistos-schemars) and [apistos_schemars_derive](https://crates.io/crates/apistos-schemars-derive)
+> It is published on crates.io with the name [apistos-schemars](https://crates.io/crates/apistos-schemars) and [apistos-schemars_derive](https://crates.io/crates/apistos-schemars_derive)
 > This fork is based on schemars master and rebased from time to time.
 
 ## Basic Usage
