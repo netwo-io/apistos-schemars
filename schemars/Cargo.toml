@@ -1,10 +1,8 @@
 [package]
-name = "schemars"
+name = "apistos-schemars"
 description = "Generate JSON Schemas from Rust code"
-homepage = "https://graham.cool/schemars/"
-repository = "https://github.com/GREsau/schemars"
+repository = "https://github.com/netwo-io/apistos-schemars"
 version = "0.8.22"
-authors = ["Graham Esau <gesau@hotmail.co.uk>"]
 edition = "2021"
 license = "MIT"
 readme = "README.md"
@@ -14,7 +12,7 @@ build = "build.rs"
 rust-version = "1.60"
 
 [dependencies]
-schemars_derive = { version = "=0.8.22", optional = true, path = "../schemars_derive" }
+schemars_derive = { package = "apistos-schemars_derive", version = "=0.8.22", optional = true, path = "../schemars_derive" }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0.25"
 dyn-clone = "1.0"
