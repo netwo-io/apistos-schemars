@@ -1,4 +1,5 @@
 mod util;
+extern crate apistos_schemars as schemars;
 use std::marker::PhantomData;
 
 use schemars::JsonSchema;

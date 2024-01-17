@@ -108,6 +108,7 @@ impl SchemaSettings {
     ///
     /// # Example
     /// ```
+    ///# extern crate apistos_schemars as schemars;
     /// use schemars::gen::{SchemaGenerator, SchemaSettings};
     ///
     /// let settings = SchemaSettings::default().with(|s| {
@@ -137,6 +138,7 @@ impl SchemaSettings {
 ///
 /// # Example
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{JsonSchema, gen::SchemaGenerator};
 ///
 /// #[derive(JsonSchema)]
@@ -187,6 +189,7 @@ impl SchemaGenerator {
     ///
     /// # Example
     /// ```
+    ///# extern crate apistos_schemars as schemars;
     /// use schemars::gen::SchemaGenerator;
     ///
     /// let gen = SchemaGenerator::default();
@@ -413,6 +416,7 @@ impl SchemaGenerator {
     ///
     /// # Example
     /// ```
+    ///# extern crate apistos_schemars as schemars;
     /// use schemars::{JsonSchema, gen::SchemaGenerator};
     ///
     /// #[derive(JsonSchema)]
@@ -486,6 +490,7 @@ impl SchemaGenerator {
 ///
 /// # Example
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::visit::Visitor;
 /// use schemars::gen::GenVisitor;
 ///
