@@ -61,6 +61,7 @@ use schema::Schema;
 /// # Examples
 /// Deriving an implementation:
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{schema_for, JsonSchema};
 ///
 /// #[derive(JsonSchema)]
@@ -75,6 +76,7 @@ use schema::Schema;
 /// you will need to determine an appropriate name and ID for the type.
 /// For non-generic types, the type name/path are suitable for this:
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{gen::SchemaGenerator, schema::Schema, JsonSchema};
 /// use std::borrow::Cow;
 ///
@@ -101,6 +103,7 @@ use schema::Schema;
 ///
 /// But generic type parameters which may affect the generated schema should typically be included in the name/ID:
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{gen::SchemaGenerator, schema::Schema, JsonSchema};
 /// use std::{borrow::Cow, marker::PhantomData};
 ///

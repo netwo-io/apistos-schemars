@@ -9,6 +9,7 @@ When overriding one of these methods, you will *usually* want to still call this
 # Example
 To add a custom property to all schemas:
 ```
+# extern crate apistos_schemars as schemars;
 use schemars::schema::SchemaObject;
 use schemars::visit::{Visitor, visit_schema_object};
 

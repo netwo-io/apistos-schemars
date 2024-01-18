@@ -1,5 +1,5 @@
 mod util;
-use ::schemars as not_schemars;
+use ::apistos_schemars as not_schemars;
 use util::*;
 
 #[allow(unused_imports)]

@@ -10,6 +10,7 @@ mod other_crate {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+extern crate apistos_schemars as schemars;
 use other_crate::Duration;
 use schemars::{schema_for, JsonSchema};
 
