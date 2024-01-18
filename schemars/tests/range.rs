@@ -1,4 +1,5 @@
 mod util;
+extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use std::ops::{Bound, Range, RangeInclusive};
 use util::*;

@@ -1,17 +1,24 @@
-# Schemars
+# Apistos Schemars
 
-[![CI Build](https://img.shields.io/github/actions/workflow/status/GREsau/schemars/ci.yml?branch=master&logo=GitHub)](https://github.com/GREsau/schemars/actions)
-[![Crates.io](https://img.shields.io/crates/v/schemars)](https://crates.io/crates/schemars)
-[![Docs](https://docs.rs/schemars/badge.svg)](https://docs.rs/schemars)
-[![MSRV 1.60+](https://img.shields.io/badge/schemars-rustc_1.60+-lightgray.svg)](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html)
+[![CI Build](https://img.shields.io/github/actions/workflow/status/netwo-io/apistos-schemars/ci.yml?branch=master&logo=GitHub)](https://github.com/netwo-io/apistos-schemars/actions)
+[![Crates.io](https://img.shields.io/crates/v/apistos-schemars)](https://crates.io/crates/apistos-schemars)
+[![Docs](https://docs.rs/apistos-schemars/badge.svg)](https://docs.rs/apistos-schemars)
+[![MSRV 1.60+](https://img.shields.io/badge/apistos-schemars-rustc_1.60+-lightgray.svg)](https://blog.rust-lang.org/2022/04/07/Rust-1.60.0.html)
 
 Generate JSON Schema documents from Rust code
+
+> ⚠️ Warning
+> 
+> This is a fork of the official [schemars repository](https://github.com/GREsau/schemars) which only exists until [this PR](https://github.com/GREsau/schemars/pull/250) is merged. 
+> It is published on crates.io with the name [apistos-schemars](https://crates.io/crates/apistos-schemars) and [apistos-schemars_derive](https://crates.io/crates/apistos-schemars_derive)
+> This fork is based on schemars master and rebased from time to time.
 
 ## Basic Usage
 
 If you don't really care about the specifics, the easiest way to generate a JSON schema for your types is to `#[derive(JsonSchema)]` and use the `schema_for!` macro. All fields of the type must also implement `JsonSchema` - Schemars implements this for many standard library types.
 
 ```rust
+extern crate apistos_schemars as schemars;
 use schemars::{schema_for, JsonSchema};
 
 #[derive(JsonSchema)]
@@ -105,6 +112,7 @@ println!("{}", serde_json::to_string_pretty(&schema).unwrap());
 One of the main aims of this library is compatibility with [Serde](https://github.com/serde-rs/serde). Any generated schema _should_ match how [serde_json](https://github.com/serde-rs/json) would serialize/deserialize to/from JSON. To support this, Schemars will check for any `#[serde(...)]` attributes on types that derive `JsonSchema`, and adjust the generated schema accordingly.
 
 ```rust
+extern crate apistos_schemars as schemars;
 use schemars::{schema_for, JsonSchema};
 use serde::{Deserialize, Serialize};
 
@@ -193,6 +201,7 @@ println!("{}", serde_json::to_string_pretty(&schema).unwrap());
 If you want a schema for a type that can't/doesn't implement `JsonSchema`, but does implement `serde::Serialize`, then you can generate a JSON schema from a value of that type. However, this schema will generally be less precise than if the type implemented `JsonSchema` - particularly when it involves enums, since schemars will not make any assumptions about the structure of an enum based on a single variant.
 
 ```rust
+extern crate apistos_schemars as schemars;
 use schemars::schema_for_value;
 use serde::Serialize;
 
@@ -260,6 +269,7 @@ Schemars can implement `JsonSchema` on types from several popular crates, enable
 - `chrono` - [chrono](https://crates.io/crates/chrono) (^0.4)
 - `indexmap1` - [indexmap](https://crates.io/crates/indexmap) (^1.2)
 - `indexmap2` - [indexmap](https://crates.io/crates/indexmap) (^2.0)
+- `ipnetwork` - [ipnetwork](https://crates.io/crates/ipnetwork) (^0.20)
 - `either` - [either](https://crates.io/crates/either) (^1.3)
 - `uuid08` - [uuid](https://crates.io/crates/uuid) (^0.8)
 - `uuid1` - [uuid](https://crates.io/crates/uuid) (^1.0)

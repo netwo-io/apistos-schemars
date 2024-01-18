@@ -4,6 +4,7 @@
 ///
 /// # Example
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{schema_for, JsonSchema};
 ///
 /// #[derive(JsonSchema)]
@@ -27,6 +28,7 @@ macro_rules! schema_for {
 ///
 /// # Example
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::{schema_for, JsonSchema};
 ///
 /// #[derive(JsonSchema)]
@@ -59,6 +61,7 @@ macro_rules! schema_for {
 ///
 /// # Example
 /// ```
+///# extern crate apistos_schemars as schemars;
 /// use schemars::schema_for_value;
 ///
 /// #[derive(serde::Serialize)]

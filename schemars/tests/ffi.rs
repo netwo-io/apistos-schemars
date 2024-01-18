@@ -1,4 +1,5 @@
 mod util;
+extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use std::ffi::{OsStr, OsString};
 use util::*;

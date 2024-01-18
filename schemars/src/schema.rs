@@ -52,6 +52,7 @@ impl Schema {
     ///
     /// # Example
     /// ```
+    ///# extern crate apistos_schemars as schemars;
     /// use schemars::schema::{Schema, SchemaObject};
     ///
     /// let bool_schema = Schema::Bool(true);
@@ -531,6 +532,7 @@ impl<T: PartialEq> SingleOrVec<T> {
     /// # Examples
     ///
     /// ```
+    ///# extern crate apistos_schemars as schemars;
     /// use schemars::schema::SingleOrVec;
     ///
     /// let s = SingleOrVec::from(10);
