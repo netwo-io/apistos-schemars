@@ -21,6 +21,7 @@ enum OrDef<A, B> {
 
 struct Str<'a>(&'a str);
 
+#[allow(dead_code)]
 #[derive(JsonSchema, Serialize)]
 #[serde(remote = "Str")]
 struct StrDef<'a>(&'a str);

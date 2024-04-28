@@ -22,6 +22,7 @@ fn skip_struct_fields() -> TestResult {
     test_default_generated_schema::<MyStruct>("skip_struct_fields")
 }
 
+#[allow(dead_code)]
 #[derive(JsonSchema)]
 struct TupleStruct(
     #[schemars(skip)] i32,
