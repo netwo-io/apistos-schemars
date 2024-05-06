@@ -3,47 +3,6 @@
 version = 3
 
 [[package]]
-name = "apistos-schemars"
-version = "0.8.17"
-dependencies = [
- "apistos-schemars_derive",
- "arrayvec 0.5.2",
- "arrayvec 0.7.4",
- "bigdecimal 0.3.1",
- "bigdecimal 0.4.2",
- "bytes",
- "chrono",
- "dyn-clone",
- "either",
- "enumset",
- "indexmap 1.9.3",
- "indexmap 2.0.2",
- "ipnetwork",
- "pretty_assertions",
- "rust_decimal",
- "semver",
- "serde",
- "serde_json",
- "smallvec",
- "smol_str",
- "trybuild",
- "url",
- "uuid 0.8.2",
- "uuid 1.5.0",
-]
-
-[[package]]
-name = "apistos-schemars_derive"
-version = "0.8.17"
-dependencies = [
- "pretty_assertions",
- "proc-macro2",
- "quote",
- "serde_derive_internals",
- "syn",
-]
-
-[[package]]
 name = "arrayvec"
 version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -260,15 +219,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "ipnetwork"
-version = "0.20.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "bf466541e9d546596ee94f9f69590f89473455f88372423e0008fc1a7daf100e"
-dependencies = [
- "serde",
-]
-
-[[package]]
 name = "itoa"
 version = "1.0.9"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -365,6 +315,46 @@ name = "ryu"
 version = "1.0.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1ad4cc8da4ef723ed60bced201181d83791ad433213d8c24efffda1eec85d741"
+
+[[package]]
+name = "schemars"
+version = "0.8.18"
+dependencies = [
+ "arrayvec 0.5.2",
+ "arrayvec 0.7.4",
+ "bigdecimal 0.3.1",
+ "bigdecimal 0.4.2",
+ "bytes",
+ "chrono",
+ "dyn-clone",
+ "either",
+ "enumset",
+ "indexmap 1.9.3",
+ "indexmap 2.0.2",
+ "pretty_assertions",
+ "rust_decimal",
+ "schemars_derive",
+ "semver",
+ "serde",
+ "serde_json",
+ "smallvec",
+ "smol_str",
+ "trybuild",
+ "url",
+ "uuid 0.8.2",
+ "uuid 1.5.0",
+]
+
+[[package]]
+name = "schemars_derive"
+version = "0.8.18"
+dependencies = [
+ "pretty_assertions",
+ "proc-macro2",
+ "quote",
+ "serde_derive_internals",
+ "syn",
+]
 
 [[package]]
 name = "semver"
