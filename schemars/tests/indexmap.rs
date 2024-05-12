@@ -1,14 +1,16 @@
 mod util;
 extern crate apistos_schemars as schemars;
-use indexmap::{IndexMap, IndexSet};
+use std::hash::RandomState;
+
+use indexmap2::{IndexMap, IndexSet};
 use schemars::JsonSchema;
 use util::*;
 
 #[allow(dead_code)]
 #[derive(JsonSchema)]
 struct IndexMapTypes {
-    map: IndexMap<i32, bool>,
-    set: IndexSet<isize>,
+    map: IndexMap<i32, bool, RandomState>,
+    set: IndexSet<isize, RandomState>,
 }
 
 #[test]

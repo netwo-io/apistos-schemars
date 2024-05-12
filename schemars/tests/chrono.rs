@@ -1,5 +1,5 @@
 mod util;
-use chrono::prelude::*;
+use chrono04::prelude::*;
 extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use util::*;

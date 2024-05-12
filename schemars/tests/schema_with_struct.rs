@@ -3,7 +3,7 @@ extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use util::*;
 
-fn schema_fn(gen: &mut schemars::gen::SchemaGenerator) -> schemars::schema::Schema {
+fn schema_fn(gen: &mut schemars::gen::SchemaGenerator) -> schemars::Schema {
     <bool>::json_schema(gen)
 }
 

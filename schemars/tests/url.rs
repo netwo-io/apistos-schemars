@@ -1,7 +1,7 @@
 mod util;
 extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
-use url::Url;
+use url2::Url;
 use util::*;
 
 #[allow(dead_code)]

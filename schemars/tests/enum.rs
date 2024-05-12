@@ -1,6 +1,7 @@
 mod util;
 extern crate apistos_schemars as schemars;
-use schemars::{JsonSchema, Map};
+use std::collections::BTreeMap;
+use schemars::JsonSchema;
 use util::*;
 
 // Ensure that schemars_derive uses the full path to std::string::String
@@ -21,7 +22,7 @@ struct Struct {
 #[schemars(rename_all = "camelCase")]
 enum External {
     UnitOne,
-    StringMap(Map<&'static str, &'static str>),
+    StringMap(BTreeMap<&'static str, &'static str>),
     UnitStructNewType(UnitStruct),
     StructNewType(Struct),
     Struct {
@@ -30,6 +31,7 @@ enum External {
     },
     UnitTwo,
     Tuple(i32, bool),
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(with = "i32")]
     WithInt,
 }
@@ -44,7 +46,7 @@ fn enum_external_tag() -> TestResult {
 #[schemars(tag = "typeProperty")]
 enum Internal {
     UnitOne,
-    StringMap(Map<&'static str, &'static str>),
+    StringMap(BTreeMap<&'static str, &'static str>),
     UnitStructNewType(UnitStruct),
     StructNewType(Struct),
     Struct {
@@ -52,6 +54,7 @@ enum Internal {
         bar: bool,
     },
     UnitTwo,
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(with = "i32")]
     WithInt,
 }
@@ -66,7 +69,7 @@ fn enum_internal_tag() -> TestResult {
 #[schemars(untagged)]
 enum Untagged {
     UnitOne,
-    StringMap(Map<&'static str, &'static str>),
+    StringMap(BTreeMap<&'static str, &'static str>),
     UnitStructNewType(UnitStruct),
     StructNewType(Struct),
     Struct {
@@ -74,6 +77,7 @@ enum Untagged {
         bar: bool,
     },
     Tuple(i32, bool),
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(with = "i32")]
     WithInt,
 }
@@ -88,7 +92,7 @@ fn enum_untagged() -> TestResult {
 #[schemars(tag = "t", content = "c")]
 enum Adjacent {
     UnitOne,
-    StringMap(Map<&'static str, &'static str>),
+    StringMap(BTreeMap<&'static str, &'static str>),
     UnitStructNewType(UnitStruct),
     StructNewType(Struct),
     Struct {
@@ -97,6 +101,7 @@ enum Adjacent {
     },
     Tuple(i32, bool),
     UnitTwo,
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(with = "i32")]
     WithInt,
 }
