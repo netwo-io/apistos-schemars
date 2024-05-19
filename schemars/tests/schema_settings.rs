@@ -1,3 +1,4 @@
+extern crate apistos_schemars as schemars;
 mod util;
 use schemars::r#gen::SchemaSettings;
 use schemars::JsonSchema;
