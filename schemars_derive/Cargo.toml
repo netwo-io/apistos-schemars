@@ -2,7 +2,7 @@
 name = "apistos-schemars_derive"
 description = "Macros for #[derive(JsonSchema)], for use with schemars"
 repository = "https://github.com/netwo-io/apistos-schemars"
-version = "0.8.19"
+version = "0.8.20"
 edition = "2021"
 license = "MIT"
 readme = "README.md"
