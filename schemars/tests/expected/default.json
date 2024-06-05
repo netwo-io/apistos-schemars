@@ -9,11 +9,11 @@
       "default": 0
     },
     "my_optional_string": {
-      "default": null,
       "type": [
         "string",
         "null"
-      ]
+      ],
+      "default": null
     },
     "my_struct2": {
       "$ref": "#/$defs/MyStruct2",
