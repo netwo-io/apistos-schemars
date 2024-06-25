@@ -15,6 +15,7 @@ dependencies = [
  "either",
  "enumset",
  "indexmap",
+ "ipnetwork",
  "pretty_assertions",
  "ref-cast",
  "rust_decimal",
@@ -218,6 +219,15 @@ checksum = "8adf3ddd720272c6ea8bf59463c04e0f93d0bbf7c5439b691bca2987e0270897"
 dependencies = [
  "equivalent",
  "hashbrown",
+]
+
+[[package]]
+name = "ipnetwork"
+version = "0.20.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "bf466541e9d546596ee94f9f69590f89473455f88372423e0008fc1a7daf100e"
+dependencies = [
+ "serde",
 ]
 
 [[package]]

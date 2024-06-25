@@ -1,7 +1,7 @@
 mod util;
 extern crate apistos_schemars as schemars;
-use std::collections::BTreeMap;
 use schemars::JsonSchema;
+use std::collections::BTreeMap;
 use util::*;
 
 // Ensure that schemars_derive uses the full path to std::string::String
