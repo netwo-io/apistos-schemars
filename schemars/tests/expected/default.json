@@ -8,6 +8,10 @@
       "format": "int32",
       "default": 0
     },
+    "my_bool": {
+      "type": "boolean",
+      "default": false
+    },
     "my_optional_string": {
       "type": [
         "string",

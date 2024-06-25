@@ -4,7 +4,7 @@ version = 3
 
 [[package]]
 name = "apistos-schemars"
-version = "0.8.21"
+version = "1.0.0-alpha.2"
 dependencies = [
  "apistos-schemars_derive",
  "arrayvec",
@@ -30,7 +30,7 @@ dependencies = [
 
 [[package]]
 name = "apistos-schemars_derive"
-version = "0.8.21"
+version = "1.0.0-alpha.2"
 dependencies = [
  "pretty_assertions",
  "proc-macro2",
