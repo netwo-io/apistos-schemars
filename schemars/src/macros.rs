@@ -88,6 +88,7 @@ macro_rules! schema_for_value {
 ///
 /// # Example
 /// ```
+/// extern crate apistos_schemars as schemars;
 /// use schemars::{Schema, json_schema};
 ///
 /// let desc = "A helpful description.";

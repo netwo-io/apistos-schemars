@@ -12,6 +12,7 @@ use serde_json::{Map, Value};
 ///
 /// A custom JSON schema can be created using the [`json_schema!`](crate::json_schema) macro:
 /// ```
+/// extern crate apistos_schemars as schemars;
 /// use schemars::{Schema, json_schema};
 ///
 /// let my_schema: Schema = json_schema!({
@@ -22,6 +23,7 @@ use serde_json::{Map, Value};
 /// Because a `Schema` is a thin wrapper around a `Value`, you can also use [`TryFrom::try_from`]/[`TryInto::try_into`] to create a `Schema` from an existing `Value`.
 /// This operation is fallible, because only [objects](Value::Object) and [bools](Value::Bool) can be converted in this way.
 /// ```
+/// extern crate apistos_schemars as schemars;
 /// use schemars::{Schema, json_schema};
 /// use serde_json::json;
 ///
@@ -46,6 +48,7 @@ use serde_json::{Map, Value};
 ///
 /// Similarly, you can use [`From`]/[`Into`] to (infallibly) create a `Schema` from an existing [`Map<String, Value>`] or [`bool`].
 /// ```
+/// extern crate apistos_schemars as schemars;
 /// use schemars::{Schema, json_schema};
 /// use serde_json::{Map, json};
 ///
