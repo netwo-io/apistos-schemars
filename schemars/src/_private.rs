@@ -174,13 +174,16 @@ pub fn apply_inner_validation(schema: &mut Schema, f: fn(&mut Schema) -> ()) {
 pub fn flatten(schema: &mut Schema, other: Schema) {
     if let Value::Object(obj2) = other.to_value() {
         let obj1 = schema.ensure_object();
+        eprintln!("obj1: {:?}, obj2: {:?}", obj1, obj2);
 
         for (key, value2) in obj2 {
+            eprintln!("key: {:?}, value2: {:?}", key, value2);
             match obj1.entry(key) {
                 Entry::Vacant(vacant) => {
                     vacant.insert(value2);
                 }
                 Entry::Occupied(mut occupied) => {
+                    eprintln!("====> occupied");
                     match occupied.key().as_str() {
                         // This special "type" handling can probably be removed once the enum variant `with`/`schema_with` behaviour is fixed
                         "type" => match (occupied.get_mut(), value2) {
@@ -218,6 +221,20 @@ pub fn flatten(schema: &mut Schema, other: Schema) {
                                 if let Value::Object(o2) = value2 {
                                     o1.extend(o2);
                                 }
+                            }
+                        }
+                        "oneOf" => {
+                            if let a1 @ Value::Array(_) = occupied.get().clone() {
+                                occupied.remove();
+                                let all_of = Value::Array(vec![
+                                    json!({
+                                      "oneOf": a1
+                                    }),
+                                    json!({
+                                      "oneOf": value2
+                                    }),
+                                ]);
+                                obj1.insert("allOf".to_string(), all_of);
                             }
                         }
                         _ => {
