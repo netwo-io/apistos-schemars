@@ -3,7 +3,7 @@ extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use util::*;
 
-fn schema_fn(gen: &mut schemars::gen::SchemaGenerator) -> schemars::schema::Schema {
+fn schema_fn(gen: &mut schemars::SchemaGenerator) -> schemars::Schema {
     <bool>::json_schema(gen)
 }
 
@@ -22,6 +22,7 @@ pub enum External {
         #[schemars(schema_with = "schema_fn")] DoesntImplementJsonSchema,
         i32,
     ),
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(schema_with = "schema_fn")]
     Unit,
 }
@@ -39,6 +40,7 @@ pub enum Internal {
         foo: DoesntImplementJsonSchema,
     },
     NewType(#[schemars(schema_with = "schema_fn")] DoesntImplementJsonSchema),
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(schema_with = "schema_fn")]
     Unit,
 }
@@ -60,6 +62,7 @@ pub enum Untagged {
         #[schemars(schema_with = "schema_fn")] DoesntImplementJsonSchema,
         i32,
     ),
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(schema_with = "schema_fn")]
     Unit,
 }
@@ -81,6 +84,7 @@ pub enum Adjacent {
         #[schemars(schema_with = "schema_fn")] DoesntImplementJsonSchema,
         i32,
     ),
+    // FIXME this should probably only replace the "payload" of the enum
     #[schemars(schema_with = "schema_fn")]
     Unit,
 }
