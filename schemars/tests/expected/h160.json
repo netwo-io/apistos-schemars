@@ -1,0 +1,6 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "H160",
+  "type": "string",
+  "pattern": "0x\\w{40}"
+}

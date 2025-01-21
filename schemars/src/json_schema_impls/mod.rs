@@ -72,6 +72,8 @@ mod maps;
 mod nonzero_signed;
 mod nonzero_unsigned;
 mod primitives;
+#[cfg(feature = "primitive_types")]
+mod primitive_types;
 #[cfg(feature = "semver")]
 mod semver;
 mod sequences;
