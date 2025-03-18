@@ -18,7 +18,7 @@
 #[macro_export]
 macro_rules! schema_for {
     ($type:ty) => {
-        $crate::gen::SchemaGenerator::default().into_root_schema_for::<$type>()
+        $crate::generator::SchemaGenerator::default().into_root_schema_for::<$type>()
     };
 }
 
@@ -42,7 +42,7 @@ macro_rules! schema_for {
 #[macro_export]
 macro_rules! schema_for {
     ($type:ty) => {
-        $crate::gen::SchemaGenerator::default().into_root_schema_for::<$type>()
+        $crate::generator::SchemaGenerator::default().into_root_schema_for::<$type>()
     };
     ($_:expr) => {
         compile_error!("This argument to `schema_for!` is not a type - did you mean to use `schema_for_value!` instead?")
@@ -56,8 +56,8 @@ macro_rules! schema_for {
 /// particularly when the value contains any enums.
 ///
 /// If the `Serialize` implementation of the value decides to fail, this macro will panic.
-/// For a non-panicking alternative, create a [`SchemaGenerator`](crate::gen::SchemaGenerator) and use
-/// its [`into_root_schema_for_value`](crate::gen::SchemaGenerator::into_root_schema_for_value) method.
+/// For a non-panicking alternative, create a [`SchemaGenerator`](crate::generator::SchemaGenerator) and use
+/// its [`into_root_schema_for_value`](crate::generator::SchemaGenerator::into_root_schema_for_value) method.
 ///
 /// # Example
 /// ```
@@ -74,7 +74,7 @@ macro_rules! schema_for {
 #[macro_export]
 macro_rules! schema_for_value {
     ($value:expr) => {
-        $crate::gen::SchemaGenerator::default()
+        $crate::generator::SchemaGenerator::default()
             .into_root_schema_for_value(&$value)
             .unwrap()
     };

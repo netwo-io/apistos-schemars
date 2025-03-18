@@ -1,6 +1,6 @@
 mod util;
 extern crate apistos_schemars as schemars;
-use schemars::gen::SchemaSettings;
+use schemars::generator::SchemaSettings;
 use schemars::schema::RootSchema;
 use util::*;
 

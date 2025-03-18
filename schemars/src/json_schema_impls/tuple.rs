@@ -1,6 +1,6 @@
-use crate::gen::SchemaGenerator;
-use crate::schema::*;
 use crate::JsonSchema;
+use crate::generator::SchemaGenerator;
+use crate::schema::*;
 use std::borrow::Cow;
 
 macro_rules! tuple_impls {
@@ -23,9 +23,9 @@ macro_rules! tuple_impls {
                     Cow::Owned(id)
                 }
 
-                fn json_schema(gen: &mut SchemaGenerator) -> Schema {
+                fn json_schema(generator: &mut SchemaGenerator) -> Schema {
                     let items = vec![
-                        $(gen.subschema_for::<$name>()),+
+                        $(generator.subschema_for::<$name>()),+
                     ];
                     SchemaObject {
                         instance_type: Some(InstanceType::Array.into()),

@@ -1,6 +1,6 @@
-use crate::gen::SchemaGenerator;
-use crate::schema::*;
 use crate::JsonSchema;
+use crate::generator::SchemaGenerator;
+use crate::schema::*;
 use chrono::prelude::*;
 use serde_json::json;
 use std::borrow::Cow;

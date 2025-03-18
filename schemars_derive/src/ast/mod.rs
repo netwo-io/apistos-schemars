@@ -10,6 +10,7 @@ pub struct Container<'a> {
     pub serde_attrs: serde_derive_internals::attr::Container,
     pub data: Data<'a>,
     pub generics: syn::Generics,
+    #[allow(dead_code)]
     pub original: &'a syn::DeriveInput,
     pub attrs: Attrs,
 }
@@ -52,7 +53,7 @@ impl<'a> Container<'a> {
         self.serde_attrs.name().deserialize_name()
     }
 
-    pub fn transparent_field(&'a self) -> Option<&'a Field> {
+    pub fn transparent_field(&self) -> Option<&Field> {
         if self.serde_attrs.transparent() {
             if let Data::Struct(_, fields) = &self.data {
                 return Some(&fields[0]);
@@ -63,7 +64,7 @@ impl<'a> Container<'a> {
     }
 }
 
-impl<'a> Variant<'a> {
+impl Variant<'_> {
     pub fn name(&self) -> &str {
         self.serde_attrs.name().deserialize_name()
     }
@@ -73,7 +74,7 @@ impl<'a> Variant<'a> {
     }
 }
 
-impl<'a> Field<'a> {
+impl Field<'_> {
     pub fn name(&self) -> &str {
         self.serde_attrs.name().deserialize_name()
     }

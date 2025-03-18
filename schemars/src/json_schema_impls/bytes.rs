@@ -1,6 +1,6 @@
-use crate::gen::SchemaGenerator;
-use crate::schema::*;
 use crate::JsonSchema;
+use crate::generator::SchemaGenerator;
+use crate::schema::*;
 use bytes::{Bytes, BytesMut};
 
 forward_impl!((JsonSchema for Bytes) => Vec<u8>);

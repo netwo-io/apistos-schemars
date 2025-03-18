@@ -3,8 +3,8 @@ extern crate apistos_schemars as schemars;
 use schemars::JsonSchema;
 use util::*;
 
-fn schema_fn(gen: &mut schemars::gen::SchemaGenerator) -> schemars::schema::Schema {
-    <bool>::json_schema(gen)
+fn schema_fn(generator: &mut schemars::generator::SchemaGenerator) -> schemars::schema::Schema {
+    <bool>::json_schema(generator)
 }
 
 struct DoesntImplementJsonSchema;

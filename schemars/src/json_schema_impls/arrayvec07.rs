@@ -1,6 +1,6 @@
-use crate::gen::SchemaGenerator;
-use crate::schema::*;
 use crate::JsonSchema;
+use crate::generator::SchemaGenerator;
+use crate::schema::*;
 use arrayvec07::{ArrayString, ArrayVec};
 use std::convert::TryInto;
 
@@ -18,11 +18,11 @@ where
         format!("Array_up_to_size_{}_of_{}", CAP, T::schema_name())
     }
 
-    fn json_schema(gen: &mut SchemaGenerator) -> Schema {
+    fn json_schema(generator: &mut SchemaGenerator) -> Schema {
         SchemaObject {
             instance_type: Some(InstanceType::Array.into()),
             array: Some(Box::new(ArrayValidation {
-                items: Some(gen.subschema_for::<T>().into()),
+                items: Some(generator.subschema_for::<T>().into()),
                 max_items: CAP.try_into().ok(),
                 ..Default::default()
             })),

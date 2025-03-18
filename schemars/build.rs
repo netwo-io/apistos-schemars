@@ -6,6 +6,9 @@ fn main() {
     let target = env::var("TARGET").unwrap();
     let emscripten = target == "asmjs-unknown-emscripten" || target == "wasm32-unknown-emscripten";
 
+    println!("cargo::rustc-check-cfg=cfg(std_atomic)");
+    println!("cargo::rustc-check-cfg=cfg(std_atomic64)");
+
     // Whitelist of archs that support std::sync::atomic module. Ideally we
     // would use #[cfg(target_has_atomic = "...")] but it is not stable yet.
     // Instead this is based on rustc's src/librustc_target/spec/*.rs.
