@@ -1,5 +1,5 @@
 extern crate apistos_schemars as schemars;
-use schemars::{schema_for, JsonSchema};
+use schemars::{JsonSchema, schema_for};
 
 #[derive(JsonSchema)]
 pub struct MyStruct {

@@ -3,7 +3,7 @@ use proc_macro2::TokenStream;
 use quote::ToTokens;
 use serde_derive_internals::Ctxt;
 use syn::{
-    parse::Parser, punctuated::Punctuated, Expr, ExprPath, Lit, Meta, MetaList, MetaNameValue, Path,
+    Expr, ExprPath, Lit, Meta, MetaList, MetaNameValue, Path, parse::Parser, punctuated::Punctuated,
 };
 
 pub(crate) static VALIDATION_KEYWORDS: &[&str] = &[

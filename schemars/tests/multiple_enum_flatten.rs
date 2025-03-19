@@ -25,7 +25,7 @@ enum Enum1 {
 #[derive(JsonSchema)]
 enum Enum2 {
     U(u32),
-    F(f64)
+    F(f64),
 }
 
 #[test]

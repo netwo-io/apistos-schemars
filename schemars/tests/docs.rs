@@ -1,6 +1,6 @@
 mod util;
 extern crate apistos_schemars as schemars;
-use schemars::{generator::SchemaSettings, JsonSchema};
+use schemars::{JsonSchema, generator::SchemaSettings};
 use util::*;
 
 #[allow(dead_code)]

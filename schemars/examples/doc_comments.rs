@@ -1,5 +1,5 @@
 extern crate apistos_schemars as schemars;
-use schemars::{schema_for, JsonSchema};
+use schemars::{JsonSchema, schema_for};
 
 /// # My Amazing Struct
 /// This struct shows off generating a schema with

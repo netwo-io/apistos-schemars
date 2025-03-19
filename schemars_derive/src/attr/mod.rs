@@ -56,11 +56,7 @@ impl Attrs {
     pub fn as_metadata(&self) -> SchemaMetadata<'_> {
         #[allow(clippy::ptr_arg)]
         fn none_if_empty(s: &String) -> Option<&str> {
-            if s.is_empty() {
-                None
-            } else {
-                Some(s)
-            }
+            if s.is_empty() { None } else { Some(s) }
         }
 
         SchemaMetadata {

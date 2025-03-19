@@ -1,6 +1,6 @@
 use pretty_assertions::assert_eq;
 extern crate apistos_schemars as schemars;
-use schemars::{generator::SchemaSettings, schema::RootSchema, schema_for, JsonSchema};
+use schemars::{JsonSchema, generator::SchemaSettings, schema::RootSchema, schema_for};
 use std::error::Error;
 use std::fs;
 

@@ -16,9 +16,13 @@ impl Schema {
         let mut s2: SchemaObject = other.into();
 
         let s1_subschemas = &mut s1.subschemas;
-        let s1_all_of = s1_subschemas.as_mut().and_then(|sub_sch| sub_sch.all_of.as_mut());
+        let s1_all_of = s1_subschemas
+            .as_mut()
+            .and_then(|sub_sch| sub_sch.all_of.as_mut());
         let s2_subschemas = &mut s2.subschemas;
-        let s2_all_of = s2_subschemas.as_mut().and_then(|sub_sch| sub_sch.all_of.as_mut());
+        let s2_all_of = s2_subschemas
+            .as_mut()
+            .and_then(|sub_sch| sub_sch.all_of.as_mut());
 
         match (s1_all_of, s2_all_of) {
             (Some(s1_all_of), Some(s2_all_of)) => {
@@ -54,23 +58,16 @@ impl Schema {
                     ..Default::default()
                 })
             }
-            (None, None) => {
-                match (s1_subschemas.is_some(), s2_subschemas.is_some()) {
-                    (true, true) => Schema::Object(SchemaObject {
-                        subschemas: Some(Box::new(SubschemaValidation {
-                            all_of: Some(vec![
-                                Schema::Object(s1),
-                                Schema::Object(s2),
-                            ]),
-                            ..Default::default()
-                        })),
+            (None, None) => match (s1_subschemas.is_some(), s2_subschemas.is_some()) {
+                (true, true) => Schema::Object(SchemaObject {
+                    subschemas: Some(Box::new(SubschemaValidation {
+                        all_of: Some(vec![Schema::Object(s1), Schema::Object(s2)]),
                         ..Default::default()
-                    }),
-                    (true, false) |
-                    (false, true) |
-                    (false, false) => Schema::Object(s1.merge(s2)),
-                }
-            }
+                    })),
+                    ..Default::default()
+                }),
+                (true, false) | (false, true) | (false, false) => Schema::Object(s1.merge(s2)),
+            },
         }
     }
 }
