@@ -1,6 +1,6 @@
 extern crate apistos_schemars as schemars;
 mod util;
-use schemars::gen::SchemaSettings;
+use schemars::r#gen::SchemaSettings;
 use schemars::JsonSchema;
 use serde_json::Value;
 use std::collections::BTreeMap;
